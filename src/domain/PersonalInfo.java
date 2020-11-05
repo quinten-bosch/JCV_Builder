@@ -1,5 +1,8 @@
 package domain;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class PersonalInfo {
 
     String firstName, lastName, firstNameValue, lastNameValue;
@@ -22,9 +25,9 @@ public class PersonalInfo {
     public String generateHTML(){
 
 
-        String startBlock = "<div class='personalInfo'> ";
-        String firstName = "<div class='firstName'> " + this.firstName + " </div> ";
-        String lastName = "<div class='lastName'> " + this.lastName+ " </div> ";
+        String startBlock = "<div class='personalInfo'>" + "\n";
+        String firstName = "    <div class='firstName'>" + this.firstName + "</div>" + "\n";
+        String lastName = "    <div class='lastName'>" + this.lastName+ "</div>" + "\n";
         String stopBlock = "</div>";
 
 
@@ -32,6 +35,19 @@ public class PersonalInfo {
         return startBlock + firstName + lastName + stopBlock;
 
 
+    }
+
+    public void writePersonalInfoToFile() {
+        String textToAppend = generateHTML();
+        try {
+            FileWriter myWriter = new FileWriter("D:\\Projects\\JCV_Builder\\out\\templates\\template1.html", true);
+            myWriter.write(textToAppend);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
 

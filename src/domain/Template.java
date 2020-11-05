@@ -1,5 +1,8 @@
 package domain;
 
+import java.io.FileWriter;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle errors
+
 public class Template {
     String templateName;
     int templateNr;
@@ -18,15 +21,21 @@ public class Template {
                 "    <link rel=\"stylesheet\" href=\"template"+ getTemplateNr() +".css\">\n" +
                 "    <title>"+ getTemplateName() +"</title>\n" +
                 "</head>\n" +
-                "<body>\n" +
-                "    \n" +
-                "</body>\n" +
-                "</html>";
+                "<body>\n";
         return html;
     }
 
     public void createTemplateFile() {
-
+        String html = generateTemplateHtml();
+        try {
+            FileWriter myWriter = new FileWriter("D:\\Projects\\JCV_Builder\\out\\templates\\"+ getTemplateName() +".html");
+            myWriter.write(html);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     public String getTemplateName() {

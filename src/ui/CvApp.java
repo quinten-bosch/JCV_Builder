@@ -9,7 +9,8 @@ public class CvApp {
         System.out.println(block1.generateHTML());
 
         Template template1 = new Template("Template1", 1);
-        System.out.println(template1.generateTemplateHtml());
+        template1.createTemplateFile();
+        block1.writePersonalInfoToFile();
 
     }
 }
