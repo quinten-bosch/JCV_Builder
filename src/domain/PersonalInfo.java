@@ -13,28 +13,43 @@ public class PersonalInfo {
     Boolean cityActive, streetActive,streetNrActive, zipActive;
     Boolean ageActive, birthDateActive;
 
-
-
-    public PersonalInfo(String firstName, String lastName, String phoneNumber, String email) {
-
+    public PersonalInfo(String firstName, String lastName, String firstNameValue, String lastNameValue, String city, String street, String streetNr, String zip, String cityValue, String streetValue, String streetNrValue, String zipValue, String age, String birthDate, String ageValue, String birthDateValue, String phoneNumber, String email, String phoneNumberValue, String emailValue, Boolean cityActive, Boolean streetActive, Boolean streetNrActive, Boolean zipActive, Boolean ageActive, Boolean birthDateActive) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.firstNameValue = firstNameValue;
+        this.lastNameValue = lastNameValue;
+        this.city = city;
+        this.street = street;
+        this.streetNr = streetNr;
+        this.zip = zip;
+        this.cityValue = cityValue;
+        this.streetValue = streetValue;
+        this.streetNrValue = streetNrValue;
+        this.zipValue = zipValue;
+        this.age = age;
+        this.birthDate = birthDate;
+        this.ageValue = ageValue;
+        this.birthDateValue = birthDateValue;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.phoneNumberValue = phoneNumberValue;
+        this.emailValue = emailValue;
+        this.cityActive = cityActive;
+        this.streetActive = streetActive;
+        this.streetNrActive = streetNrActive;
+        this.zipActive = zipActive;
+        this.ageActive = ageActive;
+        this.birthDateActive = birthDateActive;
     }
 
 
     public String generateHTML(){
+        String row = "<div class='row'>\n";
+        String startBlock = "   <div class='personalInfo'>" + "\n";
+        String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n";
+        String stopBlock = "   </div>\n</div>";
 
-
-        String startBlock = "<div class='personalInfo'>" + "\n";
-        String firstName = "    <div class='firstName'>" + this.firstName + "</div>" + "\n";
-        String lastName = "    <div class='lastName'>" + this.lastName+ "</div>" + "\n";
-        String stopBlock = "</div>";
-
-
-
-        return startBlock + firstName + lastName + stopBlock;
-
-
+        return row + startBlock + name + stopBlock;
     }
 
     public void writePersonalInfoToFile() {
