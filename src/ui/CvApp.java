@@ -4,7 +4,7 @@ import domain.*;
 
 public class CvApp {
     public static void main(String[] args) {
-        PersonalInfo block1 = new PersonalInfo("Voornaam", "Achternaam", "Bob", "Jansens", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", false, false, false,false, false, false);
+        PersonalInfo block1 = new PersonalInfo("Voornaam", "Achternaam", "Bob", "Jansens", "", "", "", "", "", "", "", "", "", "", "", "", "", "bob.jansens@gmail.com", "", "", false, false, false,false, false, false);
         System.out.println(block1.getFirstName());
         System.out.println(block1.generateHTML());
 
