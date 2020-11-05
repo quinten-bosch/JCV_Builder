@@ -48,10 +48,10 @@ public class PersonalInfo {
         String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n" + "   </div>\n";
         String birth = "";
         if (birthDateActive) {
-            birth = "        <div class='col-3'>BirthDate: " + getBirthDateValue() + "</div>\n";
+            birth = "        <div class='col'>BirthDate: " + getBirthDateValue() + "</div>\n";
         }
-        String contactInfo = "   <div class='row'>\n        <div class='col-3'>E-mail: "+ getEmailValue() +"</div>" + "\n" +
-                "        <div class='col-3'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
+        String contactInfo = "   <div class='row row-cols-auto'>\n        <div class='col'>E-mail: "+ getEmailValue() +"</div>" + "\n" +
+                "        <div class='col'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
                 birth;
         String stopBlock = "   </div>";
 

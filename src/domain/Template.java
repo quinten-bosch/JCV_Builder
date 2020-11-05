@@ -18,7 +18,7 @@ public class Template {
                 "<head>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                "    <link rel=\"stylesheet\" href=\"template"+ getTemplateNr() +".css\">\n" +
+                "    <link rel=\"stylesheet\" href=\"style/template"+ getTemplateNr() +".css\">\n" +
                 "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css\" integrity=\"sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK\" crossorigin=\"anonymous\">\n" +
                 "    <title>"+ getTemplateName() +"</title>\n" +
                 "</head>\n" +

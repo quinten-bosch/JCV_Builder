@@ -7,7 +7,7 @@ public class CvApp {
         PersonalInfo block1 = new PersonalInfo("Voornaam", "Achternaam", "Jan", "Jansens", "", "", "", "", "", "", "", "", "", "", "", "15/02/2000", "", "", "123456789", "jan.jansens@gmail.com", false, false, false,false, false, true);
         System.out.println(block1.generateHTML());
 
-        Template template1 = new Template("Template1", 1);
+        Template template1 = new Template("template1", 1);
         template1.createTemplateFile();
         block1.writePersonalInfoToFile();
 
