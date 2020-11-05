@@ -42,6 +42,20 @@ public class PersonalInfo {
         this.birthDateActive = birthDateActive;
     }
 
+    public String generateAddressHTML(){
+        String address = "";
+        if(cityActive) {
+            address = "   <div class='row'>" +
+                    "<div class='col-12'>Address: "+ getCityValue() +"</div>" +
+                    "</div>";
+        }
+        if(cityActive && streetActive) {
+            address = "   <div class='row'>" +
+                    "<div class='col-12'>Address: "+ getStreetValue() + " " + getStreetNrValue() + ", " + getZipValue() + " " + getCityValue() +"</div>" +
+                    "</div>";
+        }
+        return address;
+    }
 
     public String generateHTML(){
         String startBlock = "   <div class='row'>" + "\n";
@@ -53,7 +67,7 @@ public class PersonalInfo {
         String contactInfo = "   <div class='row row-cols-auto'>\n        <div class='col'>E-mail: "+ getEmailValue() +"</div>" + "\n" +
                 "        <div class='col'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
                 birth;
-        String stopBlock = "   </div>";
+        String stopBlock = "   </div>\n" + generateAddressHTML();
 
         return startBlock + name + contactInfo + stopBlock;
     }
