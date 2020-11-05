@@ -3,13 +3,38 @@ package domain;
 public class PersonalInfo {
 
     String firstName, lastName, firstNameValue, lastNameValue;
-    String city, street, streetNr, zip, cityValue, streetValue, streetNrValue, zipValue, cityActive, streetActive,streetNrActive, zipActive;
-    String age, birthDate, ageValue, birthDateValue, ageActive, birthDateActive;
+    String city, street, streetNr, zip, cityValue, streetValue, streetNrValue, zipValue;
+    String age, birthDate, ageValue, birthDateValue;
     String phoneNumber, email, phoneNumberValue, emailValue;
 
-    public PersonalInfo(String firstName) {
+    Boolean cityActive, streetActive,streetNrActive, zipActive;
+    Boolean ageActive, birthDateActive;
+
+
+
+    public PersonalInfo(String firstName, String lastName, String phoneNumber, String email) {
+
         this.firstName = firstName;
+        this.lastName = lastName;
     }
+
+
+    public String generateHTML(){
+
+
+        String startBlock = "<div class='personalInfo'> ";
+        String firstName = "<div class='firstName'> " + this.firstName + " </div> ";
+        String lastName = "<div class='lastName'> " + this.lastName+ " </div> ";
+        String stopBlock = "</div>";
+
+
+
+        return startBlock + firstName + lastName + stopBlock;
+
+
+    }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -107,35 +132,35 @@ public class PersonalInfo {
         this.zipValue = zipValue;
     }
 
-    public String getCityActive() {
+    public Boolean getCityActive() {
         return cityActive;
     }
 
-    public void setCityActive(String cityActive) {
+    public void setCityActive(Boolean cityActive) {
         this.cityActive = cityActive;
     }
 
-    public String getStreetActive() {
+    public Boolean getStreetActive() {
         return streetActive;
     }
 
-    public void setStreetActive(String streetActive) {
+    public void setStreetActive(Boolean streetActive) {
         this.streetActive = streetActive;
     }
 
-    public String getStreetNrActive() {
+    public Boolean getStreetNrActive() {
         return streetNrActive;
     }
 
-    public void setStreetNrActive(String streetNrActive) {
+    public void setStreetNrActive(Boolean streetNrActive) {
         this.streetNrActive = streetNrActive;
     }
 
-    public String getZipActive() {
+    public Boolean getZipActive() {
         return zipActive;
     }
 
-    public void setZipActive(String zipActive) {
+    public void setZipActive(Boolean zipActive) {
         this.zipActive = zipActive;
     }
 
@@ -171,19 +196,19 @@ public class PersonalInfo {
         this.birthDateValue = birthDateValue;
     }
 
-    public String getAgeActive() {
+    public Boolean getAgeActive() {
         return ageActive;
     }
 
-    public void setAgeActive(String ageActive) {
+    public void setAgeActive(Boolean ageActive) {
         this.ageActive = ageActive;
     }
 
-    public String getBirthDateActive() {
+    public Boolean getBirthDateActive() {
         return birthDateActive;
     }
 
-    public void setBirthDateActive(String birthDateActive) {
+    public void setBirthDateActive(Boolean birthDateActive) {
         this.birthDateActive = birthDateActive;
     }
 
