@@ -44,12 +44,12 @@ public class PersonalInfo {
 
 
     public String generateHTML(){
-        String row = "<div class='row'>\n";
-        String startBlock = "   <div class='personalInfo'>" + "\n";
-        String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n";
-        String stopBlock = "   </div>\n</div>";
+        String startBlock = "   <div class='row'>" + "\n";
+        String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n" + "   </div>\n";
+        String contactInfo = "   <div class='row'>\n        <div class='col-6'>E-mail: "+ getEmail() +"</div>" + "\n";
+        String stopBlock = "   </div>";
 
-        return row + startBlock + name + stopBlock;
+        return startBlock + name + contactInfo + stopBlock;
     }
 
     public void writePersonalInfoToFile() {
