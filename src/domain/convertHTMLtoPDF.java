@@ -11,7 +11,7 @@ public class convertHTMLtoPDF {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
 
-   
+
         ProcessBuilder processBuilder = new ProcessBuilder();
 
         String command = "wkhtmltopdf " + out_dir + "template1.html " + out_dir + "template1.pdf";
