@@ -47,12 +47,12 @@ public class PersonalInfo {
         if(cityActive) {
             address = "   <div class='row'>" +
                     "<div class='col-12'>Address: "+ getCityValue() +"</div>" +
-                    "</div>";
+                    "</div>\n";
         }
         if(cityActive && streetActive) {
             address = "   <div class='row'>" +
                     "<div class='col-12'>Address: "+ getStreetValue() + " " + getStreetNrValue() + ", " + getZipValue() + " " + getCityValue() +"</div>" +
-                    "</div>";
+                    "</div>\n";
         }
         return address;
     }
@@ -68,8 +68,9 @@ public class PersonalInfo {
                 "        <div class='col'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
                 birth;
         String stopBlock = "   </div>\n" + generateAddressHTML();
+        String horizontalLine = "<div class='row'><div class='col-12 border-bottom'></div></div>";
 
-        return startBlock + name + contactInfo + stopBlock;
+        return startBlock + name + contactInfo + stopBlock + horizontalLine;
     }
 
     public void writePersonalInfoToFile() {
