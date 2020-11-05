@@ -46,8 +46,13 @@ public class PersonalInfo {
     public String generateHTML(){
         String startBlock = "   <div class='row'>" + "\n";
         String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n" + "   </div>\n";
+        String birth = "";
+        if (birthDateActive) {
+            birth = "        <div class='col-3'>BirthDate: " + getBirthDateValue() + "</div>\n";
+        }
         String contactInfo = "   <div class='row'>\n        <div class='col-3'>E-mail: "+ getEmailValue() +"</div>" + "\n" +
-                "        <div class='col-3'>Gsm: "+ getPhoneNumberValue() +"</div>\n";
+                "        <div class='col-3'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
+                birth;
         String stopBlock = "   </div>";
 
         return startBlock + name + contactInfo + stopBlock;
