@@ -12,5 +12,8 @@ public class CvApp {
         template1.createTemplateFile();
         block1.writePersonalInfoToFile();
 
+        System.out.println(System.getProperty("user.dir"));
+        convertHTMLtoPDF.generatePDF();
+
     }
 }

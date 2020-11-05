@@ -55,7 +55,7 @@ public class PersonalInfo {
     public void writePersonalInfoToFile() {
         String textToAppend = generateHTML();
         try {
-            FileWriter myWriter = new FileWriter("D:\\Projects\\JCV_Builder\\out\\templates\\template1.html", true);
+            FileWriter myWriter = new FileWriter("D:\\Dev\\Projects\\Java\\JCV_Builder\\out\\templates\\template1.html", true);
             myWriter.write(textToAppend);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");

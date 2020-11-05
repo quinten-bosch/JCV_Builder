@@ -30,7 +30,7 @@ public class Template {
     public void createTemplateFile() {
         String html = generateTemplateHtml();
         try {
-            FileWriter myWriter = new FileWriter("D:\\Projects\\JCV_Builder\\out\\templates\\"+ getTemplateName() +".html");
+            FileWriter myWriter = new FileWriter("D:\\Dev\\Projects\\Java\\JCV_Builder"+ getTemplateName() +".html");
             myWriter.write(html);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
