@@ -46,7 +46,8 @@ public class PersonalInfo {
     public String generateHTML(){
         String startBlock = "   <div class='row'>" + "\n";
         String name = "        <div class='col-12'><h1>" + getFirstNameValue() + " " + getLastNameValue() +"</h1></div>" + "\n" + "   </div>\n";
-        String contactInfo = "   <div class='row'>\n        <div class='col-6'>E-mail: "+ getEmail() +"</div>" + "\n";
+        String contactInfo = "   <div class='row'>\n        <div class='col-3'>E-mail: "+ getEmailValue() +"</div>" + "\n" +
+                "        <div class='col-3'>Gsm: "+ getPhoneNumberValue() +"</div>\n";
         String stopBlock = "   </div>";
 
         return startBlock + name + contactInfo + stopBlock;
@@ -54,8 +55,10 @@ public class PersonalInfo {
 
     public void writePersonalInfoToFile() {
         String textToAppend = generateHTML();
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter("D:\\Dev\\Projects\\Java\\JCV_Builder\\out\\templates\\template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
             myWriter.write(textToAppend);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");

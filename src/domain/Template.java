@@ -29,8 +29,10 @@ public class Template {
 
     public void createTemplateFile() {
         String html = generateTemplateHtml();
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter("D:\\Dev\\Projects\\Java\\JCV_Builder"+ getTemplateName() +".html");
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() +".html");
             myWriter.write(html);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
