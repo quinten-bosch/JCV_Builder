@@ -11,6 +11,12 @@ public class CvApp {
         template1.createTemplateFile();
         block1.writePersonalInfoToFile();
 
+        Languages language1 = new Languages("Nederlands", "Moedertaal");
+        Languages language2 = new Languages("Engels", "Goed");
+        template1.addLanguages(language1);
+        template1.addLanguages(language2);
+        template1.writeLanguagesToFile();
+
         System.out.println(System.getProperty("user.dir"));
         convertHTMLtoPDF.generatePDF();
 

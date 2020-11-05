@@ -68,7 +68,7 @@ public class PersonalInfo {
                 "        <div class='col'>Gsm: "+ getPhoneNumberValue() +"</div>\n" +
                 birth;
         String stopBlock = "   </div>\n" + generateAddressHTML();
-        String horizontalLine = "<div class='row'><div class='col-12 border-bottom'></div></div>";
+        String horizontalLine = "<div class='row'><div class='col-12 border-bottom'></div></div>\n";
 
         return startBlock + name + contactInfo + stopBlock + horizontalLine;
     }
