@@ -37,8 +37,19 @@ public class Template {
 
     public void createTemplateFile() {
         String html = generateTemplateHtml();
+
+        if (OSValidator.isWindows()) {
+            String user_dir = System.getProperty("user.dir");
+            String out_dir = user_dir + "/out/templates/";
+        } else if (OSValidator.isUnix()) {
+            String out_dir = "/var/www/fosscvbuilder/out/templates/";
+        }
+
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
+
+
+
         try {
             FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() +".html");
             myWriter.write(html);
