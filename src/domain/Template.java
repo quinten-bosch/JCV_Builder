@@ -10,12 +10,14 @@ public class Template {
     int templateNr;
     List <Languages> languages;
     List <Skills> skills;
+    List <WorkExperience> workExperiences;
 
     public Template(String templateName, int templateNr) {
         this.templateName = templateName;
         this.templateNr = templateNr;
         this.languages = new ArrayList<>();
         this.skills = new ArrayList<>();
+        this.workExperiences = new ArrayList<>();
     }
 
     public String generateTemplateHtml() {
@@ -84,7 +86,7 @@ public class Template {
         for (Skills pSkill : this.skills) {
             skillHTML += "<div>"+ pSkill.getSkill() + ": " + pSkill.getLevel() + "</div>";
         }
-        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"<div></div>\n";
+        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"</div></div>\n";
         return skillStylingHTML;
     }
 
@@ -96,6 +98,35 @@ public class Template {
             myWriter.write(getAllSkills());
             myWriter.close();
             System.out.println("Successfully wrote skills to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void addWorkExperience(WorkExperience workExperience) {
+        this.workExperiences.add(workExperience);
+    }
+
+    public String getAllWorkExperience() {
+        String workExperienceHTML = "";
+        for (WorkExperience pWorkExperience : this.workExperiences) {
+            workExperienceHTML += "<div>"+ pWorkExperience.getFunctionValue() + "</div>\n" +
+            "<div>" + pWorkExperience.getEmployerValue() + " | " + pWorkExperience.getFromYearValue() + " - " + pWorkExperience.getUntilYearValue()+ "</div>" +
+            "<div>" + pWorkExperience.getDescriptionValue() + "</div>\n";
+        }
+        String workExperienceStylingHtml = "<div class='row'><div class='col-12'><h2>Work Experience</h2>"+ workExperienceHTML +"</div></div>\n";
+        return workExperienceStylingHtml;
+    }
+
+    public void writeWorkExperienceToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            myWriter.write(getAllWorkExperience());
+            myWriter.close();
+            System.out.println("Successfully wrote workexperience to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -132,5 +163,13 @@ public class Template {
 
     public void setSkills(List<Skills> skills) {
         this.skills = skills;
+    }
+
+    public List<WorkExperience> getWorkExperiences() {
+        return workExperiences;
+    }
+
+    public void setWorkExperiences(List<WorkExperience> workExperiences) {
+        this.workExperiences = workExperiences;
     }
 }

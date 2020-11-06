@@ -13,8 +13,11 @@ public class CvApp {
 
         Languages language1 = new Languages("Nederlands", "Moedertaal");
         Languages language2 = new Languages("Engels", "Goed");
+
         Skills skill1 = new Skills("Python", "Goed");
         Skills skill2 = new Skills("Mysql", "Goed");
+
+        WorkExperience we1 = new WorkExperience("", "CEO", "", "Leuven", "", "Apple", "", "", "", "2019", "", "", "", "2020", "", "adjdkfbkjsbdcvsjv ajbfdjkahsbfjhsabfjhsa dfb sajhbfjsakhdbfjsakhbfjksahbfjksahfb");
         template1.addLanguages(language1);
         template1.addLanguages(language2);
         template1.writeLanguagesToFile();
@@ -22,6 +25,9 @@ public class CvApp {
         template1.addSkills(skill1);
         template1.addSkills(skill2);
         template1.writeSkillsToFile();
+
+        template1.addWorkExperience(we1);
+        template1.writeWorkExperienceToFile();
 
         System.out.println(System.getProperty("user.dir"));
         convertHTMLtoPDF.generatePDF();
