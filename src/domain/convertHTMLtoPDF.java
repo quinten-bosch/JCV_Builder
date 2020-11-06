@@ -16,8 +16,15 @@ public class convertHTMLtoPDF {
 
         String command = "wkhtmltopdf " + out_dir + "template1.html " + out_dir + "template1.pdf";
 
-        processBuilder.command("cmd.exe", "/c", command);
 
+
+
+
+        if (OSValidator.isWindows()) {
+            processBuilder.command("cmd.exe", "/c", command);
+        } else if (OSValidator.isUnix()) {
+            processBuilder.command("bash", "-c", command);
+        }
 
         try {
 
