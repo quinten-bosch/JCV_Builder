@@ -53,9 +53,10 @@ public class Template {
     public String generateLanguageHtml() {
         String languageHtml = "";
         for (Languages pLanguages : this.languages) {
-            languageHtml += "<div>"+ pLanguages.getLanguage() + ": " + pLanguages.getLevel() +"</div>\n";
+            languageHtml += "<div>"+ pLanguages.getLanguage() + ": " + pLanguages.getLevel() +"</div>";
         }
-        return languageHtml;
+        String languageStylingHTML = "<div class='row'><div class='col-6'><h2>Languages</h2>"+ languageHtml +"<div></div>";
+        return languageStylingHTML;
     }
 
     public void writeLanguagesToFile() {
