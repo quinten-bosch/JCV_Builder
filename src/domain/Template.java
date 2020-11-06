@@ -43,7 +43,7 @@ public class Template {
             FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() +".html");
             myWriter.write(html);
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully created blank template.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -86,8 +86,7 @@ public class Template {
         for (Skills pSkill : this.skills) {
             skillHTML += "<div>"+ pSkill.getSkill() + ": " + pSkill.getLevel() + "</div>";
         }
-        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"</div></div>\n";
-        return skillStylingHTML;
+        return "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"</div></div>\n";
     }
 
     public void writeSkillsToFile() {
@@ -126,7 +125,7 @@ public class Template {
             FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
             myWriter.write(getAllWorkExperience());
             myWriter.close();
-            System.out.println("Successfully wrote workexperience to the file.");
+            System.out.println("Successfully wrote work experience to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

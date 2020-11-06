@@ -81,7 +81,7 @@ public class PersonalInfo {
             FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
             myWriter.write(textToAppend);
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote personal info to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
