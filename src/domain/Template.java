@@ -11,6 +11,7 @@ public class Template {
     List <Languages> languages;
     List <Skills> skills;
     List <WorkExperience> workExperiences;
+    List <Education> educations;
 
     public Template(String templateName, int templateNr) {
         this.templateName = templateName;
@@ -18,6 +19,7 @@ public class Template {
         this.languages = new ArrayList<>();
         this.skills = new ArrayList<>();
         this.workExperiences = new ArrayList<>();
+        this.educations = new ArrayList<>();
     }
 
     public String generateTemplateHtml() {
@@ -143,6 +145,33 @@ public class Template {
         }
     }
 
+    public void addEducation(Education education) { this.educations.add(education); }
+
+    public String getAllEducation() {
+        String educationHTML = "";
+        for (Education pEducation : this.educations) {
+            educationHTML += "<div>" + pEducation.getEducationValue() + "</div>\n" +
+            "<div>" + pEducation.getEducationalInstitutionValue() + " | " + pEducation.getFromYearValue() + " - " + pEducation.getUntilYearValue() + "</div>" +
+            "<div>" + pEducation.getDescriptionValue() + "</div>\n";
+        }
+        String educationStylingHTML = "<div class='row'><div class='col-12'><h2>Work Experience</h2>"+ educationHTML +"</div></div>\n";
+        return educationStylingHTML;
+    }
+
+    public void writeEducationToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            myWriter.write(getAllEducation());
+            myWriter.close();
+            System.out.println("Successfully wrote work education to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public String getTemplateName() {
         return templateName;
     }
@@ -181,5 +210,13 @@ public class Template {
 
     public void setWorkExperiences(List<WorkExperience> workExperiences) {
         this.workExperiences = workExperiences;
+    }
+
+    public List<Education> getEducations() {
+        return educations;
+    }
+
+    public void setEducations(List<Education> educations) {
+        this.educations = educations;
     }
 }
