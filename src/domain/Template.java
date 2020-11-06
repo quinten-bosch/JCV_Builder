@@ -25,7 +25,7 @@ public class Template {
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <link rel=\"stylesheet\" href=\"style/template"+ getTemplateNr() +".css\">\n" +
-                "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css\" integrity=\"sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK\" crossorigin=\"anonymous\">\n" +
+                "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">\n" +
                 "    <title>"+ getTemplateName() +"</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
@@ -57,7 +57,7 @@ public class Template {
         for (Languages pLanguages : this.languages) {
             languageHtml += "<div>"+ pLanguages.getLanguage() + ": " + pLanguages.getLevel() +"</div>";
         }
-        String languageStylingHTML = "<div class='row'><div class='col-6'><h2>Languages</h2>"+ languageHtml +"<div></div>";
+        String languageStylingHTML = "<div class='row'><div class='col-6'><h2>Languages</h2>"+ languageHtml +"<div></div>\n";
         return languageStylingHTML;
     }
 
@@ -68,7 +68,7 @@ public class Template {
             FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
             myWriter.write(generateLanguageHtml());
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote languages to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class Template {
         for (Skills pSkill : this.skills) {
             skillHTML += "<div>"+ pSkill.getSkill() + ": " + pSkill.getLevel() + "</div>";
         }
-        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"<div></div>";
+        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"<div></div>\n";
         return skillStylingHTML;
     }
 
@@ -95,7 +95,7 @@ public class Template {
             FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
             myWriter.write(getAllSkills());
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Successfully wrote skills to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

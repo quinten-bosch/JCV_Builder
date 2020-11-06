@@ -18,6 +18,7 @@ public class CvApp {
         template1.addLanguages(language1);
         template1.addLanguages(language2);
         template1.writeLanguagesToFile();
+
         template1.addSkills(skill1);
         template1.addSkills(skill2);
         template1.writeSkillsToFile();
