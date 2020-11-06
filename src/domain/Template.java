@@ -9,11 +9,13 @@ public class Template {
     String templateName;
     int templateNr;
     List <Languages> languages;
+    List <Skills> skills;
 
     public Template(String templateName, int templateNr) {
         this.templateName = templateName;
         this.templateNr = templateNr;
         this.languages = new ArrayList<>();
+        this.skills = new ArrayList<>();
     }
 
     public String generateTemplateHtml() {
@@ -73,6 +75,33 @@ public class Template {
         }
     }
 
+    public void addSkills(Skills skill) {
+        this.skills.add(skill);
+    }
+
+    public String getAllSkills() {
+        String skillHTML = "";
+        for (Skills pSkill : this.skills) {
+            skillHTML += "<div>"+ pSkill.getSkill() + ": " + pSkill.getLevel() + "</div>";
+        }
+        String skillStylingHTML = "<div class='row'><div class='col-6'><h2>Skills</h2>"+ skillHTML +"<div></div>";
+        return skillStylingHTML;
+    }
+
+    public void writeSkillsToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            myWriter.write(getAllSkills());
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public String getTemplateName() {
         return templateName;
     }
@@ -95,5 +124,13 @@ public class Template {
 
     public void setLanguages(List<Languages> languages) {
         this.languages = languages;
+    }
+
+    public List<Skills> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skills> skills) {
+        this.skills = skills;
     }
 }

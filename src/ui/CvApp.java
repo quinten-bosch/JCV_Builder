@@ -13,9 +13,14 @@ public class CvApp {
 
         Languages language1 = new Languages("Nederlands", "Moedertaal");
         Languages language2 = new Languages("Engels", "Goed");
+        Skills skill1 = new Skills("Python", "Goed");
+        Skills skill2 = new Skills("Mysql", "Goed");
         template1.addLanguages(language1);
         template1.addLanguages(language2);
         template1.writeLanguagesToFile();
+        template1.addSkills(skill1);
+        template1.addSkills(skill2);
+        template1.writeSkillsToFile();
 
         System.out.println(System.getProperty("user.dir"));
         convertHTMLtoPDF.generatePDF();
