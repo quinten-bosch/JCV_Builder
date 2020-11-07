@@ -3,7 +3,9 @@ package ui;
 import domain.*;
 
 public class CvApp {
+    public static String session_ID;
     public static void main(String[] args) {
+        session_ID = args[0];
         PersonalInfo block1 = new PersonalInfo("Voornaam", "Achternaam", "Jan", "Jansens", "", "", "", "", "Leuven", "Stationstraat", "51", "3000", "", "", "", "15/02/2000", "", "", "123456789", "jan.jansens@gmail.com", true, true, false,false, false, true);
 
 
