@@ -6,6 +6,8 @@ public class CvAppV2 {
     public static String session_ID;
     public static void main(String[] args) {
         session_ID = args[0];
+        System.out.println("SessionID: "+session_ID);
+
         int teller = 0;
         int skillsTeller = 0;
 
@@ -16,7 +18,7 @@ public class CvAppV2 {
 
         for (String arg : args) {
             System.out.println(arg);
-            if (arg.equals("Skills")) {
+            if (arg.equals("Skills"+session_ID)) {
                 skills[skillsTeller] = new Skills("hallo","goed");
                 template1.addSkills(skills[skillsTeller]);
                 skillsTeller++;
@@ -24,6 +26,6 @@ public class CvAppV2 {
             teller++;
         }
         template1.writeSkillsToFile();
-        System.out.println("SessionID: "+session_ID);
+        convertHTMLtoPDF.generatePDF();
     }
 }
