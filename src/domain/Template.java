@@ -54,7 +54,7 @@ public class Template {
 
 
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() +".html");
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html");
             myWriter.write(html);
             myWriter.close();
             System.out.println("Successfully created blank template.");
@@ -83,7 +83,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
             myWriter.write(generateLanguageHtml());
             myWriter.close();
             System.out.println("Successfully wrote languages to the file.");
@@ -109,7 +109,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
             myWriter.write(getAllSkills());
             myWriter.close();
             System.out.println("Successfully wrote skills to the file.");
@@ -138,7 +138,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
             myWriter.write(getAllWorkExperience());
             myWriter.close();
             System.out.println("Successfully wrote work experience to the file.");
@@ -165,7 +165,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
             myWriter.write(getAllEducation());
             myWriter.close();
             System.out.println("Successfully wrote work education to the file.");

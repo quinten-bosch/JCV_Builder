@@ -1,5 +1,5 @@
 package domain;
-
+import ui.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,7 +14,7 @@ public class convertHTMLtoPDF {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
 
-        String command = "wkhtmltopdf " + out_dir + "template1.html " + out_dir + "template1.pdf";
+        String command = "wkhtmltopdf " + out_dir + "template1" + CvApp.session_ID + ".html " + out_dir + "template1" + CvApp.session_ID + ".pdf";
 
 
         if (OSValidator.isWindows()) {

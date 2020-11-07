@@ -1,5 +1,7 @@
 package domain;
 
+import ui.CvApp;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -78,7 +80,7 @@ public class PersonalInfo {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"template1.html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/template1" + CvApp.session_ID +".html", true);
             myWriter.write(textToAppend);
             myWriter.close();
             System.out.println("Successfully wrote personal info to the file.");
