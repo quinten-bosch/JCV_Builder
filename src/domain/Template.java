@@ -5,6 +5,8 @@ import java.io.IOException;  // Import the IOException class to handle errors
 import java.util.List;
 import java.util.ArrayList;
 
+import ui.*;
+
 public class Template {
     String templateName;
     int templateNr;
@@ -30,7 +32,7 @@ public class Template {
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <link rel=\"stylesheet\" href=\"style/template"+ getTemplateNr() +".css\">\n" +
                 "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">\n" +
-                "    <title>"+ getTemplateName() +"</title>\n" +
+                "    <title>"+ getTemplateName() + CvAppV2.session_ID +"</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<div class='container'>\n";
