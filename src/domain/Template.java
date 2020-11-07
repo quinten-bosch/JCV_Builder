@@ -32,7 +32,7 @@ public class Template {
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <link rel=\"stylesheet\" href=\"style/template"+ getTemplateNr() +".css\">\n" +
                 "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">\n" +
-                "    <title>"+ CvApp.session_ID + "</title>\n" +
+                "    <title>"+ CvAppV2.session_ID + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<div class='container'>\n";
@@ -54,7 +54,7 @@ public class Template {
 
 
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html");
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvAppV2.session_ID +".html");
             myWriter.write(html);
             myWriter.close();
             System.out.println("Successfully created blank template.");
@@ -83,7 +83,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvAppV2.session_ID +".html", true);
             myWriter.write(generateLanguageHtml());
             myWriter.close();
             System.out.println("Successfully wrote languages to the file.");
@@ -109,7 +109,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvAppV2.session_ID +".html", true);
             myWriter.write(getAllSkills());
             myWriter.close();
             System.out.println("Successfully wrote skills to the file.");
@@ -138,7 +138,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvAppV2.session_ID +".html", true);
             myWriter.write(getAllWorkExperience());
             myWriter.close();
             System.out.println("Successfully wrote work experience to the file.");
@@ -165,7 +165,7 @@ public class Template {
         String user_dir = System.getProperty("user.dir");
         String out_dir = user_dir + "/out/templates/";
         try {
-            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvApp.session_ID +".html", true);
+            FileWriter myWriter = new FileWriter(out_dir+"/"+ getTemplateName() + CvAppV2.session_ID +".html", true);
             myWriter.write(getAllEducation());
             myWriter.close();
             System.out.println("Successfully wrote work education to the file.");
