@@ -58,7 +58,7 @@ public class Template {
             System.out.println("Successfully created blank template.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
-        
+
 
         }
     }
