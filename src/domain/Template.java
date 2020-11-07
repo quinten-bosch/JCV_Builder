@@ -39,16 +39,15 @@ public class Template {
 
     public void createTemplateFile() {
         String html = generateTemplateHtml();
-
+        String out_dir = "";
         if (OSValidator.isWindows()) {
             String user_dir = System.getProperty("user.dir");
-            String out_dir = user_dir + "/out/templates/";
-        } else if (OSValidator.isUnix()) {
-            String out_dir = "/var/www/fosscvbuilder/out/templates/";
+           out_dir = user_dir + "/out/templates/";
+        }
+        else {
+            out_dir = "/var/www/fosscvbuilder/out/templates/";
         }
 
-        String user_dir = System.getProperty("user.dir");
-        String out_dir = user_dir + "/out/templates/";
 
 
 
@@ -59,7 +58,8 @@ public class Template {
             System.out.println("Successfully created blank template.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
+        
+
         }
     }
 
