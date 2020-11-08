@@ -1,7 +1,6 @@
 package ui;
 
 import domain.*;
-import org.intellij.lang.annotations.Language;
 
 public class CvAppV2 {
     public static String session_ID;
