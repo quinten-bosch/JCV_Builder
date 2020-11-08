@@ -22,6 +22,7 @@ public class CvAppV2 {
             System.out.println(arg);
             if (arg.equals("PersonalInfo"+session_ID)) {
                 personalInfos[personalInfoTeller] = new PersonalInfo("Voornaam", "Achternaam", "Jan", "Jansens", "", "", "", "", "Leuven", "Stationstraat", "51", "3000", "", "", "", "15/02/2000", "", "", "123456789", "jan.jansens@gmail.com", true, true, false,false, false, true);
+                personalInfos[personalInfoTeller].writePersonalInfoToFile();
                 personalInfoTeller++;
             }
             if (arg.equals("Skills"+session_ID)) {
@@ -31,7 +32,6 @@ public class CvAppV2 {
             }
             teller++;
         }
-        personalInfos[personalInfoTeller].writePersonalInfoToFile();
         template1.writeSkillsToFile();
         convertHTMLtoPDF.generatePDF();
     }
