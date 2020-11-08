@@ -157,7 +157,7 @@ public class Template {
             "<div>" + pEducation.getEducationalInstitutionValue() + " | " + pEducation.getFromYearValue() + " - " + pEducation.getUntilYearValue() + "</div>" +
             "<div>" + pEducation.getDescriptionValue() + "</div>\n";
         }
-        String educationStylingHTML = "<div class='row'><div class='col-12'><h2>Work Experience</h2>"+ educationHTML +"</div></div>\n";
+        String educationStylingHTML = "<div class='row'><div class='col-12'><h2>Education</h2>"+ educationHTML +"</div></div>\n";
         return educationStylingHTML;
     }
 
