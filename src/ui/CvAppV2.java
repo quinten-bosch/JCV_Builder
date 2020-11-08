@@ -7,6 +7,8 @@ public class CvAppV2 {
     public static void main(String[] args) {
         session_ID = args[0];
         System.out.println("SessionID: "+session_ID);
+        String blockType = args[1];
+        System.out.println("Block Type:"+blockType);
 
         int teller = 0;
         int personalInfoTeller = 0;
@@ -24,6 +26,22 @@ public class CvAppV2 {
         WorkExperience[] we = new WorkExperience[3];
         Education[] education = new Education[3];
 
+        if (blockType.equals("Skills")) {
+            for (String arg : args) {
+                if (arg.equals(session_ID) || arg.equals(blockType)) {
+                    System.out.println("");
+                }
+                else {
+                    String[] skillType = arg.split("SEP");
+                    System.out.println(skillType[0] + " " + skillType[1]);
+                    skills[skillsTeller] = new Skills(skillType[0], skillType[1]);
+                    template1.addSkills(skills[skillsTeller]);
+                    skillsTeller++;
+                }
+            }
+            template1.writeSkillsToFile();
+        }
+/*
         for (String arg : args) {
             System.out.println(arg);
             if (arg.equals("PersonalInfo"+session_ID)) {
@@ -53,10 +71,12 @@ public class CvAppV2 {
             }
             teller++;
         }
-        template1.writeSkillsToFile();
-        template1.writeLanguagesToFile();
-        template1.writeWorkExperienceToFile();
-        template1.writeEducationToFile();
+
+ */
+
+        //template1.writeLanguagesToFile();
+        //template1.writeWorkExperienceToFile();
+        //template1.writeEducationToFile();
         convertHTMLtoPDF.generatePDF();
     }
 }
