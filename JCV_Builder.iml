@@ -17,5 +17,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.6" level="project" />
+    <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.10.2" level="application" />
   </component>
 </module>
