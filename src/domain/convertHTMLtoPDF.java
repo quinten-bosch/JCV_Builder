@@ -14,7 +14,7 @@ public class convertHTMLtoPDF {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
 
-        String command = "wkhtmltopdf " + out_dir + "template1" + CvAppV2.session_ID + ".html " + out_dir + "template1" + CvAppV2.session_ID + ".pdf";
+        String command = "wkhtmltopdf " + out_dir + "template" + Test3.sessionID + ".html " + out_dir + "template1" + CvAppV2.session_ID + ".pdf";
 
 
         if (OSValidator.isWindows()) {

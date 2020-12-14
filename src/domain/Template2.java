@@ -9,10 +9,16 @@ import java.util.ArrayList;
 public class Template2 {
     String templateName;
     ArrayList<Skills> skills;
+    ArrayList<Languages> languages;
+    ArrayList<Education> educations;
+    ArrayList<WorkExperience> workExperiences;
 
     public Template2(String templateName) {
         setTemplateName(templateName);
         this.skills = new ArrayList<Skills>();
+        this.languages = new ArrayList<Languages>();
+        this.educations = new ArrayList<Education>();
+        this.workExperiences = new ArrayList<WorkExperience>();
     }
 
     public String generateTemplateHtml() {
@@ -23,7 +29,7 @@ public class Template2 {
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <link rel=\"stylesheet\" href=\"style/template.css\">\n" +
                 "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">\n" +
-                "    <title>"+ this.templateName + "</title>\n" +
+                "    <title>"+ getTemplateName() + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "<div class='container'>\n";
@@ -78,6 +84,86 @@ public class Template2 {
         }
     }
 
+    public void addLanguages(Languages language) {
+        this.languages.add(language);
+    }
+
+    public String languageToHtml() {
+        String languageHtml = "";
+        for (Languages pLanguages : this.languages) {
+            languageHtml += "<div>"+ pLanguages.getLanguage() + ": " + pLanguages.getLevel() +"</div>";
+        }
+        return "<div class='row'><div class='col-6'><h2>Languages</h2>"+ languageHtml +"<div></div>\n";
+    }
+
+    public void writeLanguagesToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"/template"+ getTemplateName() +".html", true);
+            myWriter.write(languageToHtml());
+            myWriter.close();
+            System.out.println("Successfully wrote languages to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void addEducation(Education education) { this.educations.add(education); }
+
+    public String educationToHtml() {
+        String educationHTML = "";
+        for (Education pEducation : this.educations) {
+            educationHTML += "<div>" + pEducation.getEducationValue() + "</div>\n" +
+                    "<div>" + pEducation.getEducationalInstitutionValue() + " | " + pEducation.getFromYearValue() + " - " + pEducation.getUntilYearValue() + "</div>" +
+                    "<div>" + pEducation.getDescriptionValue() + "</div>\n";
+        }
+        return "<div class='row'><div class='col-12'><h2>Education</h2>"+ educationHTML +"</div></div>\n";
+    }
+
+    public void writeEducationToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"/template"+ getTemplateName() +".html", true);
+            myWriter.write(educationToHtml());
+            myWriter.close();
+            System.out.println("Successfully wrote work education to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void addWorkExperience(WorkExperience workExperience) {
+        this.workExperiences.add(workExperience);
+    }
+
+    public String workExperienceToHtml() {
+        String workExperienceHTML = "";
+        for (WorkExperience pWorkExperience : this.workExperiences) {
+            workExperienceHTML += "<div>"+ pWorkExperience.getFunctionValue() + "</div>\n" +
+                    "<div>" + pWorkExperience.getEmployerValue() + " | " + pWorkExperience.getFromYearValue() + " - " + pWorkExperience.getUntilYearValue()+ "</div>" +
+                    "<div>" + pWorkExperience.getDescriptionValue() + "</div>\n";
+        }
+        return "<div class='row'><div class='col-12'><h2>Work Experience</h2>"+ workExperienceHTML +"</div></div>\n";
+    }
+
+    public void writeWorkExperienceToFile() {
+        String user_dir = System.getProperty("user.dir");
+        String out_dir = user_dir + "/out/templates/";
+        try {
+            FileWriter myWriter = new FileWriter(out_dir+"/template"+ getTemplateName() +".html", true);
+            myWriter.write(workExperienceToHtml());
+            myWriter.close();
+            System.out.println("Successfully wrote work experience to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public String getTemplateName() {
         return templateName;
     }
@@ -92,5 +178,13 @@ public class Template2 {
 
     public void setSkills(ArrayList<Skills> skills) {
         this.skills = skills;
+    }
+
+    public ArrayList<Languages> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(ArrayList<Languages> languages) {
+        this.languages = languages;
     }
 }

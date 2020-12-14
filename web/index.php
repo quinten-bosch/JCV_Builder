@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fwrite($myfile, $myJSON);
     fclose($myfile);
 
-    $command = 'java ui.CvAppV2 '.session_id();
+    $command = shell_exec('java ui.Test3 '.session_id());
     echo "<pre>$command</pre>";
 }
 
@@ -469,21 +469,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             q++;
             $(wrapper_exp).append('<div class="my-3 pt-3 border-top" id="exp-block"><div class="row"><div class="col"> <input type="text" class="form-control" placeholder="Function" id="experience1" name="function[]"></div><div class="col"> <input type="text" class="form-control" placeholder="Place" id="place1" name="place[]"></div></div><div class="row my-3"><div class="col"> <input type="text" class="form-control" placeholder="Employer" id="employer1" name="employer[]"></div></div><div class="row my-3"><div class="col"> <label for="experience-fromdate1">From Month</label> <select class="form-control" id="experience-fromdate1" name="exp-from-month[]"><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option> </select></div><div class="col"> <label for="experience-fromyear1">From Year</label> <select class="form-control" id="fromyear'+ q +'" name="exp-from-year[]"></select></div><div class="col"> <label for="experience-todate1">To Month</label> <select class="form-control" id="experience-todate1" name="exp-to-month[]"><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option> </select></div><div class="col"> <label for="experience-toyear1">To Year</label> <select class="form-control" id="toyear'+ q +'" name="exp-to-year[]"></select></div></div><div class="row my-3"><div class="col"><div class="form-group shadow-textarea"> <label for="experience-description1">Description</label><textarea class="form-control z-depth-1" id="experience-description1" rows="3" placeholder="Write something here..." name="exp-description[]"></textarea></div></div></div> <a href="javascript:void(0);" class="remove_button">Remove</a></div>');
             for (i = new Date().getFullYear() + 10; i > 1950; i--) {
-            if (i === new Date().getFullYear()) {
-                $('#fromyear'+q).append($('<option selected />').val(i).html(i));
+                if (i === new Date().getFullYear()) {
+                    $('#fromyear'+q).append($('<option selected />').val(i).html(i));
+                }
+                else {
+                    $('#fromyear'+q).append($('<option />').val(i).html(i));
+                }
             }
-            else {
-                $('#fromyear'+q).append($('<option />').val(i).html(i));
+            for (i = new Date().getFullYear() + 10; i > 1950; i--) {
+                if (i === new Date().getFullYear()) {
+                    $('#toyear'+q).append($('<option selected />').val(i).html(i));
+                }
+                else {
+                    $('#toyear'+q).append($('<option />').val(i).html(i));
+                }
             }
-        }
-        for (i = new Date().getFullYear() + 10; i > 1950; i--) {
-            if (i === new Date().getFullYear()) {
-                $('#toyear'+q).append($('<option selected />').val(i).html(i));
-            }
-            else {
-                $('#toyear'+q).append($('<option />').val(i).html(i));
-            }
-        }
         });
         $(wrapper_exp).on("click", ".remove_button", function(e) {
             e.preventDefault();
