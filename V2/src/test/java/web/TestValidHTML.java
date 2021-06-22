@@ -20,7 +20,7 @@ public class TestValidHTML {
 
     @Before
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Quinten\\Downloads\\chromedriver_win32(2)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
