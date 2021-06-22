@@ -71,12 +71,14 @@ public class Servlet extends HttpServlet {
     private String template(HttpServletRequest request, HttpServletResponse response) {
 
         CV cv = db.getCVById(1);
+        PersonalInfo personal = cv.getInfo();
         ArrayList<WorkExperience> wes = cv.getWorkExperiences();
         ArrayList<Education> edus = cv.getEducations();
         ArrayList<Skill> skills = cv.getSkills();
         ArrayList<Language> languages = cv.getLanguages();
 
         request.setAttribute("yourCv", cv);
+        request.setAttribute("info", personal);
         request.setAttribute("wes", wes);
         request.setAttribute("edus", edus);
         request.setAttribute("skills", skills);
@@ -91,6 +93,7 @@ public class Servlet extends HttpServlet {
 
         CV cv = new CV();
         setID(cv, request, errors);
+        setPersonalInfo(cv, request, errors);
         setWorkExperiences(cv, request, errors);
         setEducations(cv, request, errors);
         setLanguages(cv, request, errors);
@@ -109,6 +112,25 @@ public class Servlet extends HttpServlet {
         int id = this.db.getLastID() + 1;
         try {
             cv.setId(id);
+        } catch (DomainException d) {
+            errors.add(d.getMessage());
+        }
+    }
+
+    private void setPersonalInfo(CV cv, HttpServletRequest request, ArrayList<String> errors) {
+        String fname = request.getParameter("firstName");
+        String lname = request.getParameter("lastName");
+        String mail = request.getParameter("mail");
+        String tel = request.getParameter("tel");
+        String street = request.getParameter("streetName");
+        String housenr = request.getParameter("houseNumber");
+        String zip = request.getParameter("zip");
+        String city = request.getParameter("city");
+        String description = request.getParameter("description-personal");
+        String linkedin = request.getParameter("linkedin");
+        try {
+            PersonalInfo persone = new PersonalInfo(fname, lname, mail, tel, city, street, housenr, zip, description, linkedin);
+            cv.setInfo(persone);
         } catch (DomainException d) {
             errors.add(d.getMessage());
         }

@@ -5,6 +5,7 @@
 <head>
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Gudea|Lato|Rokkitt" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -13,6 +14,7 @@
     <script src="js/script.js"></script>
 </head>
 <body>
+<c:set var="info" value="${info}" />
 <div id="drag" class="cv instaFade wrap">
     <div class="mainDetails">
         <div id="headshot" class="">
@@ -20,16 +22,17 @@
         </div>
 
         <div id="name">
-            <h1 class="quickFade delayTwo">Quinten Bosch</h1>
-            <h4 class="quickFade delayThree">RN, BSN, BS</h4>
-            <h4 class="quickFade delayThree">Under Construction</h4>
+            <h1 class="quickFade delayTwo">${info.getFirstname()} ${info.getLastname()}</h1>
+            <h4 class="quickFade delayThree"><i class="fa fa-home"></i> ${info.getStreet()} ${info.getStreetNr()}, ${info.getZip()} ${info.getCity()}</h4>
+            <h4 class="quickFade delayThree"><i class="fa fa-envelope"></i> ${info.getEmail()}</h4>
+            <h4 class="quickFade delayThree"><i class="fa fa-phone"></i> ${info.getPhone()}</h4>
         </div>
 
         <div id="contactDetails" class="quickFade delayFour">
             <ul>
 
                 <!-- <li><a href="//linkedin.com/in/jennifermogan" title="LinkedIn"><i class="fa fa-print" aria-hidden="true"></i></a></li>-->
-                <li><a href="//linkedin.com/in/jennifermogan" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="${info.getLinkedin()}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 
             </ul>
         </div>
@@ -45,8 +48,7 @@
                 </div>
 
                 <div class="sectionContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat
-                        luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+                    <p>${info.getDescription()}</p>
                 </div>
             </article>
             <div class="clear"></div>

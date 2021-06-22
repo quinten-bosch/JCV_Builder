@@ -35,11 +35,11 @@
                                     <div class="row mb-3">
                                         <div class="col">
                                             <label for="fname">Firstname</label>
-                                            <input type="text" class="form-control" placeholder="" id="fname" name="fname" value="">
+                                            <input type="text" class="form-control" placeholder="" id="fname" name="firstName" value="">
                                         </div>
                                         <div class="col">
                                             <label for="lname">Lastname</label>
-                                            <input type="text" class="form-control" placeholder="" id="lname" name="lname" value="">
+                                            <input type="text" class="form-control" placeholder="" id="lname" name="lastName" value="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -49,17 +49,17 @@
                                         </div>
                                         <div class="col">
                                             <label for="tel">Phone number</label>
-                                            <input type="tel" class="form-control" placeholder="" id="tel" name="mail" value="">
+                                            <input type="tel" class="form-control" placeholder="" id="tel" name="tel" value="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col">
                                             <label for="strname">Streetname</label>
-                                            <input type="text" class="form-control" placeholder="" id="strname" name="strname" value="">
+                                            <input type="text" class="form-control" placeholder="" id="strname" name="streetName" value="">
                                         </div>
                                         <div class="col">
                                             <label for="housenr">House number</label>
-                                            <input type="text" class="form-control" placeholder="" id="housenr" name="housenr" value="">
+                                            <input type="text" class="form-control" placeholder="" id="housenr" name="houseNumber" value="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -70,6 +70,29 @@
                                         <div class="col">
                                             <label for="city">City</label>
                                             <input type="text" class="form-control" placeholder="" id="city" name="city" value="">
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <button class="btn btn-info w-100" type="button" data-toggle="collapse" data-target="#collapseExample67" aria-expanded="false" aria-controls="collapseExample67">
+                                            Extra
+                                        </button>
+                                    </p>
+                                    <div class="collapse" id="collapseExample67">
+                                        <div class="card card-body">
+                                            <div class="row my-3">
+                                                <div class="col">
+                                                    <div class="form-group shadow-textarea">
+                                                        <label for="description-personal">Description</label>
+                                                        <textarea class="form-control z-depth-1" id="description-personal" rows="3" placeholder="Write something here..." name="description-personal"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="linkedin">Linkedin url</label>
+                                                    <input type="text" class="form-control" placeholder="" id="linkedin" name="linkedin">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

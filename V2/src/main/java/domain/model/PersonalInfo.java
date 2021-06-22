@@ -3,17 +3,45 @@ package domain.model;
 public class PersonalInfo {
 
     private String firstname, lastname;
-    private String email;
+    private String email, phone;
     private String city, street, streetNr, zip;
+    private String description, linkedin;
 
-    public PersonalInfo(String firstname, String lastname, String email, String city, String street, String streetNr, String zip) {
+    public PersonalInfo(String firstname, String lastname, String email, String phone, String city, String street, String streetNr, String zip, String description, String linkedin) {
         this.setFirstname(firstname);
         this.setLastname(lastname);
         this.setEmail(email);
-        this.setCity(city);
+        this.setPhone(phone);
         this.setStreet(street);
         this.setStreetNr(streetNr);
         this.setZip(zip);
+        this.setCity(city);
+        this.setDescription(description);
+        this.setLinkedin(linkedin);
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getFirstname() {
