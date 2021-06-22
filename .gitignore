@@ -75,3 +75,5 @@ fabric.properties
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+V2/target/ROOT.war
+*.class
