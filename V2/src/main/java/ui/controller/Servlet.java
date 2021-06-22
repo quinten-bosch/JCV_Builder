@@ -6,9 +6,7 @@ import domain.model.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -44,6 +42,8 @@ public class Servlet extends HttpServlet {
             command = request.getParameter("command");
         }
 
+        HttpSession session = request.getSession();
+
         String destination;
 
         switch (command) {
@@ -70,7 +70,9 @@ public class Servlet extends HttpServlet {
 
     private String template(HttpServletRequest request, HttpServletResponse response) {
 
-        CV cv = db.getCVById(1);
+        int id = (int) request.getSession().getAttribute("cvID");
+
+        CV cv = db.getCVById(id);
         PersonalInfo personal = cv.getInfo();
         ArrayList<WorkExperience> wes = cv.getWorkExperiences();
         ArrayList<Education> edus = cv.getEducations();
@@ -101,6 +103,7 @@ public class Servlet extends HttpServlet {
 
         try {
             db.addCV(cv);
+            request.getSession().setAttribute("cvID", cv.getId());
         } catch (DomainException d) {
             errors.add(d.getMessage());
         }
@@ -268,6 +271,17 @@ public class Servlet extends HttpServlet {
                 }
             }
         }
+    }
+
+    private Cookie getCookieWithKey(HttpServletRequest request, String key) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies == null) {
+            return null;
+        }
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals(key)) return cookie;
+        }
+        return null;
     }
 
 }
