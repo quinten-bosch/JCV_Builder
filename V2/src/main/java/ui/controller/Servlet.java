@@ -133,24 +133,26 @@ public class Servlet extends HttpServlet {
 
 
         for (int i = 0; i < functions.length; i++) {
-            WorkExperience we = new WorkExperience();
+            if (!functions[i].equals("")) {
+                WorkExperience we = new WorkExperience();
 
-            we.setFunction(functions[i]);
-            we.setPlace(place[i]);
-            we.setEmployer(employer[i]);
+                we.setFunction(functions[i]);
+                we.setPlace(place[i]);
+                we.setEmployer(employer[i]);
 
-            we.setDescription(description[i]);
-            try {
-                String teSamen = fromMonth[i] + " " + fromYear[i];
-                Date date = format.parse(teSamen);
-                we.setFrom(date);
+                we.setDescription(description[i]);
+                try {
+                    String teSamen = fromMonth[i] + " " + fromYear[i];
+                    Date date = format.parse(teSamen);
+                    we.setFrom(date);
 
-                String teSamen2 = toMonth[i] + " " + toYear[i];
-                Date date2 = format.parse(teSamen2);
-                we.setUntil(date2);
-                cv.addWorkExperience(we);
-            } catch (DomainException | ParseException d) {
-                errors.add(d.getMessage());
+                    String teSamen2 = toMonth[i] + " " + toYear[i];
+                    Date date2 = format.parse(teSamen2);
+                    we.setUntil(date2);
+                    cv.addWorkExperience(we);
+                } catch (DomainException | ParseException d) {
+                    errors.add(d.getMessage());
+                }
             }
         }
     }
@@ -172,26 +174,28 @@ public class Servlet extends HttpServlet {
         DateFormat format = new SimpleDateFormat("MMMM yyyy", Locale.ENGLISH);
 
         for (int i = 0; i < education.length; i++) {
-            Education edu = new Education();
+            if (!education[i].equals("")) {
+                Education edu = new Education();
 
-            edu.setEducation(education[i]);
-            edu.setPlace(place[i]);
-            edu.setEducationalInstitution(institution[i]);
-            edu.setDescription(description[i]);
+                edu.setEducation(education[i]);
+                edu.setPlace(place[i]);
+                edu.setEducationalInstitution(institution[i]);
+                edu.setDescription(description[i]);
 
-            try {
-                String teSamen = fromMonth[i] + " " + fromYear[i];
-                Date date = format.parse(teSamen);
-                edu.setFrom(date);
+                try {
+                    String teSamen = fromMonth[i] + " " + fromYear[i];
+                    Date date = format.parse(teSamen);
+                    edu.setFrom(date);
 
-                String teSamen2 = toMonth[i] + " " + toYear[i];
-                Date date2 = format.parse(teSamen2);
-                edu.setUntil(date2);
+                    String teSamen2 = toMonth[i] + " " + toYear[i];
+                    Date date2 = format.parse(teSamen2);
+                    edu.setUntil(date2);
 
-                cv.addEducation(edu);
+                    cv.addEducation(edu);
 
-            } catch (DomainException | ParseException d) {
-                errors.add(d.getMessage());
+                } catch (DomainException | ParseException d) {
+                    errors.add(d.getMessage());
+                }
             }
         }
 
@@ -203,18 +207,19 @@ public class Servlet extends HttpServlet {
         String[] levels = request.getParameterValues("language-level");
         if (languages != null) {
             for (int i = 0; i < languages.length; i++) {
-                Language la = new Language();
-                Level lv = new Level(levels[i], true);
+                if (!languages[i].equals("")) {
+                    Language la = new Language();
+                    Level lv = new Level(levels[i], true);
 
-                la.setLanguage(languages[i]);
-                la.setLevel(lv);
+                    la.setLanguage(languages[i]);
+                    la.setLevel(lv);
 
-                try {
-                    cv.addLanguage(la);
-                } catch (DomainException d) {
-                    errors.add(d.getMessage());
+                    try {
+                        cv.addLanguage(la);
+                    } catch (DomainException d) {
+                        errors.add(d.getMessage());
+                    }
                 }
-
             }
         }
     }
@@ -226,18 +231,19 @@ public class Servlet extends HttpServlet {
 
         if ( skills != null) {
             for (int i = 0; i < skills.length; i++) {
-                Skill sk = new Skill();
-                Level lv = new Level(levels[i], false);
+                if (!skills[i].equals("")) {
+                    Skill sk = new Skill();
+                    Level lv = new Level(levels[i], false);
 
-                sk.setNaam(skills[i]);
-                sk.setLevel(lv);
+                    sk.setNaam(skills[i]);
+                    sk.setLevel(lv);
 
-                try {
-                    cv.addSkill(sk);
-                } catch (DomainException d) {
-                    errors.add(d.getMessage());
+                    try {
+                        cv.addSkill(sk);
+                    } catch (DomainException d) {
+                        errors.add(d.getMessage());
+                    }
                 }
-
             }
         }
     }

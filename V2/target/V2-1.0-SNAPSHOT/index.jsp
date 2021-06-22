@@ -20,6 +20,63 @@
         </div>
         <div class="col-md-6 border py-4">
             <form action="Servlet?command=add" method="post" novalidate>
+                <div class="accordion my-4" id="accordionExample6">
+                    <div class="card">
+                        <div class="card-header" id="heading6">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                                    Personal info
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse6" class="collapse show text-left" aria-labelledby="heading6" data-parent="#accordionExample6">
+                            <div class="card-body">
+                                <div id="personal-info">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="fname">Firstname</label>
+                                            <input type="text" class="form-control" placeholder="" id="fname" name="fname" value="">
+                                        </div>
+                                        <div class="col">
+                                            <label for="lname">Lastname</label>
+                                            <input type="text" class="form-control" placeholder="" id="lname" name="lname" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="mail">E-mail</label>
+                                            <input type="email" class="form-control" placeholder="" id="mail" name="mail" value="">
+                                        </div>
+                                        <div class="col">
+                                            <label for="tel">Phone number</label>
+                                            <input type="tel" class="form-control" placeholder="" id="tel" name="mail" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="strname">Streetname</label>
+                                            <input type="text" class="form-control" placeholder="" id="strname" name="strname" value="">
+                                        </div>
+                                        <div class="col">
+                                            <label for="housenr">House number</label>
+                                            <input type="text" class="form-control" placeholder="" id="housenr" name="housenr" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="zip">Zip code</label>
+                                            <input type="text" class="form-control" placeholder="" id="zip" name="zip" value="">
+                                        </div>
+                                        <div class="col">
+                                            <label for="city">City</label>
+                                            <input type="text" class="form-control" placeholder="" id="city" name="city" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="accordion" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="headingOne">

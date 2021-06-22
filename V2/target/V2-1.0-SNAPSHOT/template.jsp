@@ -29,7 +29,7 @@
             <ul>
 
                 <!-- <li><a href="//linkedin.com/in/jennifermogan" title="LinkedIn"><i class="fa fa-print" aria-hidden="true"></i></a></li>-->
-                <li><a href="//linkedin.com/in/jennifermogan" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="//linkedin.com/in/jennifermogan" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 
             </ul>
         </div>
@@ -52,29 +52,41 @@
             <div class="clear"></div>
         </section>
 
+        <c:choose>
+            <c:when test="${not empty wes}">
+                <section>
+                    <div class="sectionTitle">
+                        <h1>Work Experience</h1>
+                    </div>
 
-        <section>
-            <div class="sectionTitle">
-                <h1>Work Experience</h1>
-            </div>
+                    <div class="sectionContent">
 
-            <div class="sectionContent">
+                        <c:forEach var="we" items="${wes}">
+                            <c:if test='${we.getFunction() != ""}'>
+                                <article>
+                                    <h2>${we.getFunction()}</h2>
+                                    <p class="subDetails">${we.getEmployer()} - ${we.getPlace()}</p>
+                                    <p class="subDetails">${we.getFrom()} - ${we.getUntil()}</p>
+                                    <p>${we.getDescription()}</p>
+                                </article>
+                            </c:if>
+                        </c:forEach>
 
-                <c:forEach var="we" items="${wes}">
-                    <article>
-                        <h2>${we.getFunction()}</h2>
-                        <p class="subDetails">${we.getEmployer()} - ${we.getPlace()}</p>
-                        <p class="subDetails">${we.getFrom()} - ${we.getUntil()}</p>
-                        <p>${we.getDescription()}</p>
-                    </article>
-                </c:forEach>
-
-            </div>
+                    </div>
 
 
-            <div class="clear"></div>
-        </section>
+                    <div class="clear"></div>
+                </section>
+            </c:when>
+            <c:otherwise></c:otherwise>
+        </c:choose>
 
+
+        <c:choose>
+            <c:when test="${not empty wes}">
+            </c:when>
+            <c:otherwise></c:otherwise>
+        </c:choose>
         <section id="Education">
             <div class="sectionTitle">
                 <h1>Education</h1>
