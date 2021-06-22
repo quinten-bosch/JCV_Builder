@@ -77,3 +77,4 @@ fabric.properties
 .idea/vcs.xml
 V2/target/ROOT.war
 *.class
+*.class
