@@ -20,6 +20,17 @@
 
         </div>
         <div class="col-md-6 border py-4">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Tester 1 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6795759946429036"
+                 data-ad-slot="2980583376"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             <form action="Servlet?command=add" method="post" novalidate>
                 <div class="accordion my-4" id="accordionExample6">
                     <div class="card">
