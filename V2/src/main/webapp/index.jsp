@@ -261,7 +261,7 @@
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <label for="education-fromyear1">From Year</label>
+                                                <label for="fromyear2">From Year</label>
                                                 <select class="form-control" id="fromyear2" name="edu-from-year">
 
                                                 </select>

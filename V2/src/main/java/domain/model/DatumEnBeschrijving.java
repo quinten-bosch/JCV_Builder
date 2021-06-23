@@ -2,6 +2,7 @@ package domain.model;
 
 import domain.DomainException;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class DatumEnBeschrijving {
@@ -9,6 +10,7 @@ public abstract class DatumEnBeschrijving {
     private Date from, until;
     private String description;
     private String place;
+    SimpleDateFormat simpleformat = new SimpleDateFormat("MMMM yyyy");
 
     public DatumEnBeschrijving(Date from, Date until, String description, String place) {
         if (until.before(from)) throw new DomainException("from kan niet na until zijn!");
@@ -30,16 +32,16 @@ public abstract class DatumEnBeschrijving {
         this.place = place;
     }
 
-    public Date getFrom() {
-        return from;
+    public String getFrom() {
+        return simpleformat.format(from);
     }
 
     public void setFrom(Date from) {
         this.from = from;
     }
 
-    public Date getUntil() {
-        return until;
+    public String getUntil() {
+        return simpleformat.format(until);
     }
 
     public void setUntil(Date until) {
