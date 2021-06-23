@@ -4,7 +4,7 @@ This is the repository for our FOSS (Free and open-source software) CV/resume ge
 
 Feel free to use this tool to spice up your resume!
 
-Some of our main features include
+Some of our main features include:
 
   - Add personal info
   - Add multiple skills & languages
