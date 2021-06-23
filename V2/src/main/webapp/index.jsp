@@ -284,7 +284,7 @@
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <label for="education-toyear1">To Year</label>
+                                                <label for="toyear2">To Year</label>
                                                 <select class="form-control" id="toyear2" name="edu-to-year">
 
                                                 </select>
