@@ -50,6 +50,9 @@ public class Servlet extends HttpServlet {
             case "add":
                 destination = add(request, response);
                 break;
+            case "creator":
+                destination = creator(request, response);
+                break;
             case "template":
                 destination = template(request, response);
                 break;
@@ -68,6 +71,11 @@ public class Servlet extends HttpServlet {
 
     }
 
+    private String creator(HttpServletRequest request, HttpServletResponse response) {
+
+        return "creator.jsp";
+
+    }
     private String template(HttpServletRequest request, HttpServletResponse response) {
 
         int id = (int) request.getSession().getAttribute("cvID");
