@@ -382,8 +382,8 @@
                                                 <option value="c2">C2</option>
                                                 <option value="matig">matig</option>
                                                 <option value="redelijk">redelijk</option>
-                                                <option value="September">goed</option>
-                                                <option value="October">zeer goed</option>
+                                                <option value="goed">goed</option>
+                                                <option value="zeer goed">zeer goed</option>
                                             </select>
                                         </div>
                                         <a href="javascript:void(0);" class="remove_button">Remove</a>
@@ -408,10 +408,13 @@
 </div>
 <footer class="footer py-3 text-center">
     <div class="container">
-        <span class="text-muted">&copy; FossCvBuilder</span>
+        <span class="text-muted" id="footer-year"></span><span class="text-muted"> &copy; FossCvBuilder</span>
     </div>
 </footer>
 
+<script>
+    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
