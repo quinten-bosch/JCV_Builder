@@ -28,10 +28,10 @@
 
 <div class="container-fluid text-center">
     <div class="row">
-        <div class="col-md-3 border">
+        <div class="col-md-3">
 
         </div>
-        <div class="col-md-6 border py-4">
+        <div class="col-md-6 py-4">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- Tester 1 -->
             <ins class="adsbygoogle"
@@ -397,20 +397,14 @@
                 <input type="submit" name="submit" value="Generate Templates" class="btn btn-info">
             </form>
         </div>
-        <div class="col-md-3 border">
+        <div class="col-md-3">
 
         </div>
     </div>
 </div>
-<footer class="footer py-3 text-center">
-    <div class="container">
-        <span class="text-muted" id="footer-year"></span><span class="text-muted"> &copy; FossCvBuilder</span>
-    </div>
-</footer>
 
-<script>
-    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-</script>
+<jsp:include page="footer.jsp" />
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
