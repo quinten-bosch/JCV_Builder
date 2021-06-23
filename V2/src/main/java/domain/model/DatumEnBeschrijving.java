@@ -4,13 +4,14 @@ import domain.DomainException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public abstract class DatumEnBeschrijving {
 
     private Date from, until;
     private String description;
     private String place;
-    SimpleDateFormat simpleformat = new SimpleDateFormat("MMMM yyyy");
+    SimpleDateFormat simpleformat = new SimpleDateFormat("MMMM yyyy", Locale.ENGLISH);
 
     public DatumEnBeschrijving(Date from, Date until, String description, String place) {
         if (until.before(from)) throw new DomainException("from kan niet na until zijn!");
