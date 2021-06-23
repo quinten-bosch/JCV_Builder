@@ -378,12 +378,6 @@
                                                 <option value="redelijk">redelijk</option>
                                                 <option value="goed">goed</option>
                                                 <option value="zeer goed">zeer goed</option>
-                                                <option value="c1">C1</option>
-                                                <option value="c2">C2</option>
-                                                <option value="matig">matig</option>
-                                                <option value="redelijk">redelijk</option>
-                                                <option value="goed">goed</option>
-                                                <option value="zeer goed">zeer goed</option>
                                             </select>
                                         </div>
                                         <a href="javascript:void(0);" class="remove_button">Remove</a>
@@ -426,7 +420,7 @@
         $(add_skill_button).click(function(e) {
             e.preventDefault();
             x++;
-            $(wrapper_skills).append('<div class="row my-3 pt-3 border-top" id="skill-block'+ x +'"><div class="col"><input type="text" class="form-control" placeholder="Skill" id="skill1" name="skill" value=""/></div><div class="col"><input type="text" class="form-control" placeholder="Level" id="level1" name="skill-level" value=""/></div><a href="javascript:void(0);" class="remove_button">Remove</a></div>');
+            $(wrapper_skills).append('<div class="row my-3 pt-3 border-top" id="skill-block'+ x +'"><div class="col"><input type="text" class="form-control" placeholder="Skill" id="skill1" name="skill" value=""/></div><div class="col"><select class="form-control" id="level1" name="skill-level" value=""> <option value="matig">matig</option> <option value="redelijk">redelijk</option> <option value="goed">goed</option> <option value="zeer goed">zeer goed</option> </select></div><a href="javascript:void(0);" class="remove_button">Remove</a></div>');
         });
         $(wrapper_skills).on("click", ".remove_button", function(e) {
             e.preventDefault();
@@ -440,7 +434,7 @@
         $(add_language_button).click(function(e) {
             e.preventDefault();
             y++;
-            $(wrapper_languages).append('<div class="row my-3 pt-3 border-top" id="language-block'+ y +'"><div class="col"><input type="text" class="form-control" placeholder="Language" id="language1" name="language" value=""/></div><div class="col"><input type="text" class="form-control" placeholder="Level" id="language-level1" name="language-level" value=""/></div><a href="javascript:void(0);" class="remove_button">Remove</a></div>');
+            $(wrapper_languages).append('<div class="row my-3 pt-3 border-top" id="language-block'+ y +'"><div class="col"><input type="text" class="form-control" placeholder="Language" id="language1" name="language" value=""/></div><div class="col"><select class="form-control" id="language-level1" name="language-level" value=""> <option value="a1">A1</option> <option value="a2">A2</option> <option value="b1">B1</option> <option value="b2">B2</option> <option value="c1">C1</option> <option value="c2">C2</option> <option value="matig">matig</option> <option value="redelijk">redelijk</option> <option value="September">goed</option> <option value="October">zeer goed</option> </select></div><a href="javascript:void(0);" class="remove_button">Remove</a></div>');
         });
         $(wrapper_languages).on("click", ".remove_button", function(e) {
             e.preventDefault();
