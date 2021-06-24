@@ -39,8 +39,8 @@
             background: #fff;
             height: 1120px;
             width: 790px;
-            -webkit-transform: scale(0.443);
-            transform: scale(0.443);
+            -webkit-transform: scale(0.440);
+            transform: scale(0.440);
             max-height: 1133px;
             /*left: 50%;*/
             /*margin-left: -100px;*/
