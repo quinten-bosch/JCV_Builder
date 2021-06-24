@@ -93,7 +93,7 @@ public class Servlet extends HttpServlet {
         request.setAttribute("edus", edus);
         request.setAttribute("skills", skills);
         request.setAttribute("languages", languages);
-        return "template.jsp";
+        return "templates.jsp";
 
     }
 
