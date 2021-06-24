@@ -39,6 +39,7 @@
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-firefox-driver:3.141.59" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:9.0.24" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:9.0.24" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

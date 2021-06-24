@@ -3,10 +3,12 @@ package ui.controller;
 import domain.DomainException;
 import domain.db.CvDB;
 import domain.model.*;
+import org.apache.commons.io.FileUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -76,7 +78,7 @@ public class Servlet extends HttpServlet {
         return "creator.jsp";
 
     }
-    private String template(HttpServletRequest request, HttpServletResponse response) {
+    private String template(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         int id = (int) request.getSession().getAttribute("cvID");
 
@@ -93,6 +95,7 @@ public class Servlet extends HttpServlet {
         request.setAttribute("edus", edus);
         request.setAttribute("skills", skills);
         request.setAttribute("languages", languages);
+
         return "templates.jsp";
 
     }
