@@ -27,7 +27,7 @@
 </jsp:include>
 
 <div class="container-fluid text-center">
-    <div class="row">
+    <div class="row py-4">
         <div class="col-md-3">
 
         </div>

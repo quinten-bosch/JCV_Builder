@@ -61,6 +61,12 @@ public class Servlet extends HttpServlet {
             case "createTemplates":
                 destination = createTemplates(request, response);
                 break;
+            case "login":
+                destination = login(request, response);
+                break;
+            case "loginPage":
+                destination = loginPage(request, response);
+                break;
             default:
                 destination = home(request, response);
                 break;
@@ -79,6 +85,18 @@ public class Servlet extends HttpServlet {
     private String creator(HttpServletRequest request, HttpServletResponse response) {
 
         return "creator.jsp";
+
+    }
+
+    private String login(HttpServletRequest request, HttpServletResponse response) {
+
+        return "login.jsp";
+
+    }
+
+    private String loginPage(HttpServletRequest request, HttpServletResponse response) {
+
+        return "login.jsp";
 
     }
 

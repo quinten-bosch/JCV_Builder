@@ -19,7 +19,7 @@
             </li>
         </ul>
         <div class="my-2 my-lg-0">
-            <a href="#" type="button" class="btn btn-outline-light me-2">Login</a>
+            <a href="Servlet?command=loginPage" type="button" class="btn btn-outline-light me-2">Login</a>
             <a href="#" type="button" class="btn btn-info">Sign-up</a>
         </div>
     </div>
