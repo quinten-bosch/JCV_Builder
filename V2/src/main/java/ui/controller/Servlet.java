@@ -101,24 +101,7 @@ public class Servlet extends HttpServlet {
     }
 
     private String createTemplates(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        int id = (int) request.getSession().getAttribute("cvID");
-
-        File dir = new File("D:\\Projects\\JCV_Builder\\V2\\src\\main\\webapp\\templates");
-        File[] listOfFiles = dir.listFiles();
-
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                String templateName = listOfFiles[i].getName();
-                String newFilename = id + templateName;
-                File newFile = new File("D:\\Projects\\JCV_Builder\\V2\\src\\main\\webapp\\user_templates\\" + newFilename);
-                if (newFile.createNewFile()) {
-                    System.out.println("File created: " + newFile.getAbsolutePath());
-                } else {
-                    System.out.println("File already exists.");
-                }
-            }
-        }
+        
         return "index.jsp";
 
     }
