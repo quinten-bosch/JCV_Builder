@@ -101,7 +101,7 @@ public class Servlet extends HttpServlet {
     }
 
     private String createTemplates(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        
+
         return "index.jsp";
 
     }
