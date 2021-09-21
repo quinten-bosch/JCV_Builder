@@ -3,10 +3,12 @@ package ui.controller;
 import domain.DomainException;
 import domain.db.CvDB;
 import domain.model.*;
+import org.apache.commons.io.FileUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -56,6 +58,15 @@ public class Servlet extends HttpServlet {
             case "template":
                 destination = template(request, response);
                 break;
+            case "createTemplates":
+                destination = createTemplates(request, response);
+                break;
+            case "login":
+                destination = login(request, response);
+                break;
+            case "loginPage":
+                destination = loginPage(request, response);
+                break;
             default:
                 destination = home(request, response);
                 break;
@@ -76,7 +87,26 @@ public class Servlet extends HttpServlet {
         return "creator.jsp";
 
     }
-    private String template(HttpServletRequest request, HttpServletResponse response) {
+
+    private String login(HttpServletRequest request, HttpServletResponse response) {
+
+        return "login.jsp";
+
+    }
+
+    private String loginPage(HttpServletRequest request, HttpServletResponse response) {
+
+        return "login.jsp";
+
+    }
+
+    private String createTemplates(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        return "index.jsp";
+
+    }
+
+    private String template(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         int id = (int) request.getSession().getAttribute("cvID");
 
@@ -93,7 +123,8 @@ public class Servlet extends HttpServlet {
         request.setAttribute("edus", edus);
         request.setAttribute("skills", skills);
         request.setAttribute("languages", languages);
-        return "template.jsp";
+
+        return "templates.jsp";
 
     }
 
